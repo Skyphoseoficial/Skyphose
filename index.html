@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Skyphose — Channel Description</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --sky: #00d4ff;
+    --pulse: #7b2fff;
+    --night: #08050f;
+    --glow: #c060ff;
+    --pink: #ff6eb4;
+    --white: #eef0ff;
+    --mid: #7788bb;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--night);
+    color: var(--white);
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Stars */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 8%  12%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 40%, rgba(200,200,255,0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 52% 18%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 55%, rgba(180,180,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88%  8%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 78%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 63% 82%, rgba(200,180,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 42% 65%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 82% 32%, rgba(180,200,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 90%, rgba(255,200,255,0.3) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Orbs */
+  .orb { position: fixed; border-radius: 50%; filter: blur(90px); opacity: 0.15; pointer-events: none; z-index: 0; animation: drift 14s ease-in-out infinite alternate; }
+  .orb-1 { width: 550px; height: 550px; background: var(--pulse); top: -180px; left: -120px; animation-delay: 0s; }
+  .orb-2 { width: 420px; height: 420px; background: var(--sky);   bottom: -120px; right: -80px; animation-delay: -5s; }
+  .orb-3 { width: 280px; height: 280px; background: var(--pink);  top: 40%; left: 55%; animation-delay: -9s; opacity: 0.1; }
+
+  @keyframes drift {
+    from { transform: translateY(0) scale(1); }
+    to   { transform: translateY(28px) scale(1.07); }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px 90px;
+  }
+
+  /* ── HERO ── */
+  .hero { text-align: center; margin-bottom: 48px; animation: fadeDown 0.9s ease both; }
+
+  .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: clamp(56px, 13vw, 100px);
+    letter-spacing: 0.07em;
+    background: linear-gradient(135deg, var(--sky) 0%, var(--glow) 45%, var(--pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+  }
+  .logo::after {
+    content: 'SKYPHOSE';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--sky), var(--glow), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: blur(20px);
+    opacity: 0.45;
+    z-index: -1;
+  }
+
+  .sub {
+    margin-top: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 0.5em;
+    color: var(--sky);
+    opacity: 0.65;
+    text-transform: uppercase;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--pink), var(--sky), var(--pulse), transparent);
+    opacity: 0.35;
+    margin-bottom: 44px;
+    animation: fadeIn 1s ease both 0.3s;
+  }
+
+  /* ── HOOK STATEMENT ── */
+  .hook {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeUp 0.9s ease both 0.4s;
+  }
+  .hook-quote {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(18px, 4vw, 26px);
+    font-weight: 700;
+    line-height: 1.4;
+    background: linear-gradient(90deg, var(--white), var(--glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 18px;
+  }
+  .hook-body {
+    font-size: 14.5px;
+    line-height: 1.9;
+    color: rgba(238,240,255,0.78);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  .hook-body strong { color: var(--sky); font-weight: 400; }
+  .hook-body em     { color: var(--pink); font-style: normal; }
+
+  /* ── WAVEFORM ── */
+  .wave-deco {
+    display: flex; align-items: flex-end; justify-content: center;
+    gap: 3px; height: 40px; margin: 36px auto; opacity: 0.3;
+  }
+  .wb {
+    width: 3px;
+    background: linear-gradient(to top, var(--pink), var(--sky));
+    border-radius: 2px;
+    animation: wavePulse 1.3s ease-in-out infinite alternate;
+  }
+  .wb:nth-child(1)  { height:35%; animation-delay:.00s }
+  .wb:nth-child(2)  { height:60%; animation-delay:.08s }
+  .wb:nth-child(3)  { height:85%; animation-delay:.16s }
+  .wb:nth-child(4)  { height:50%; animation-delay:.24s }
+  .wb:nth-child(5)  { height:100%;animation-delay:.12s }
+  .wb:nth-child(6)  { height:70%; animation-delay:.20s }
+  .wb:nth-child(7)  { height:90%; animation-delay:.04s }
+  .wb:nth-child(8)  { height:45%; animation-delay:.28s }
+  .wb:nth-child(9)  { height:75%; animation-delay:.00s }
+  .wb:nth-child(10) { height:55%; animation-delay:.18s }
+  .wb:nth-child(11) { height:88%; animation-delay:.10s }
+  .wb:nth-child(12) { height:65%; animation-delay:.26s }
+  .wb:nth-child(13) { height:42%; animation-delay:.14s }
+  .wb:nth-child(14) { height:78%; animation-delay:.06s }
+  .wb:nth-child(15) { height:30%; animation-delay:.22s }
+  @keyframes wavePulse {
+    from { transform: scaleY(0.25); }
+    to   { transform: scaleY(1); }
+  }
+
+  /* ── PILLARS ── */
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 50px;
+    animation: fadeUp 0.9s ease both 0.6s;
+  }
+  @media (max-width: 480px) { .pillars { grid-template-columns: 1fr; } }
+
+  .pillar {
+    border: 1px solid rgba(192,96,255,0.18);
+    background: rgba(8,5,15,0.65);
+    border-radius: 14px;
+    padding: 22px 20px 20px;
+    backdrop-filter: blur(10px);
+    transition: border-color .3s, transform .3s;
+  }
+  .pillar:hover { border-color: rgba(192,96,255,0.5); transform: translateY(-4px); }
+  .pillar-icon  { font-size: 20px; margin-bottom: 10px; display: block; }
+  .pillar-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--glow); margin-bottom: 8px;
+  }
+  .pillar p { font-size: 13px; line-height: 1.72; color: var(--mid); }
+
+  /* ── CONTENT TYPES ── */
+  .content-block {
+    margin-bottom: 50px;
+    animation: fadeUp 0.9s ease both 0.8s;
+  }
+  .block-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px; letter-spacing: 0.42em;
+    color: var(--sky); text-transform: uppercase; margin-bottom: 18px;
+  }
+  .content-rows { display: flex; flex-direction: column; gap: 10px; }
+  .crow {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,212,255,0.1);
+    background: rgba(0,212,255,0.04);
+    transition: border-color .3s;
+  }
+  .crow:hover { border-color: rgba(0,212,255,0.3); }
+  .crow-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .crow-title { font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--white); margin-bottom: 4px; }
+  .crow-desc  { font-size: 12.5px; color: var(--mid); line-height: 1.6; }
+
+  /* ── GENRE TAGS ── */
+  .genres { text-align: center; margin-bottom: 50px; animation: fadeUp 0.9s ease both 1.0s; }
+  .genres-label { font-family: 'Orbitron', sans-serif; font-size: 10px; letter-spacing: 0.42em; color: var(--mid); text-transform: uppercase; margin-bottom: 16px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; }
+  .tag {
+    padding: 6px 16px; border-radius: 999px; font-size: 11.5px;
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(255,110,180,0.35);
+    background: rgba(255,110,180,0.07);
+    color: var(--pink);
+    font-family: 'Orbitron', sans-serif; font-weight: 400;
+    transition: background .3s, border-color .3s;
+  }
+  .tag:hover { background: rgba(255,110,180,0.2); border-color: var(--pink); }
+
+  /* ── RULES ── */
+  .rules {
+    border-left: 2px solid rgba(192,96,255,0.3);
+    padding-left: 24px;
+    margin-bottom: 50px;
+    animation: fadeUp 0.9s ease both 1.1s;
+  }
+  .rules-title { font-family: 'Orbitron', sans-serif; font-size: 10px; letter-spacing: 0.42em; color: var(--glow); text-transform: uppercase; margin-bottom: 16px; }
+  .rules ul { list-style: none; }
+  .rules li { font-size: 13px; line-height: 1.75; color: var(--mid); padding: 4px 0 4px 16px; position: relative; }
+  .rules li::before { content: '›'; position: absolute; left: 0; color: var(--pink); font-size: 17px; line-height: 1.35; }
+
+  /* ── SOCIAL ── */
+  .social { text-align: center; animation: fadeUp 0.9s ease both 1.2s; }
+  .social-label { font-family: 'Orbitron', sans-serif; font-size: 10px; letter-spacing: 0.42em; color: var(--mid); text-transform: uppercase; margin-bottom: 20px; }
+  .social-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .slink {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 10px 20px; border-radius: 8px;
+    font-family: 'Orbitron', sans-serif; font-size: 10.5px; letter-spacing: 0.18em;
+    text-decoration: none; color: var(--white);
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+    transition: background .3s, border-color .3s, transform .2s;
+  }
+  .slink:hover { background: rgba(192,96,255,0.12); border-color: rgba(192,96,255,0.45); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  .footer { margin-top: 64px; text-align: center; font-size: 10.5px; letter-spacing: 0.22em; color: rgba(119,136,187,0.3); font-family: 'Orbitron', sans-serif; animation: fadeIn 1s ease both 1.4s; }
+
+  /* ── ANIMS ── */
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-18px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeUp   { from { opacity:0; transform:translateY(14px);  } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+</style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="logo">SKYPHOSE</div>
+    <div class="sub">Nightcore &amp; EDM · Bringing Back The 2010s</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- HOOK -->
+  <div class="hook">
+    <div class="hook-quote">You forgot about these songs.<br>We didn't.</div>
+    <p class="hook-body">
+      <strong>Skyphose</strong> is a channel dedicated to reviving the <em>forgotten anthems of the 2010s</em> —
+      tracks that once ruled playlists, late-night drives, and montage videos,
+      then quietly disappeared from everyone's feed.<br><br>
+      We take those songs and bring them back harder — as <strong>Nightcore edits, EDM reworks</strong>,
+      and occasional mixes — so the feeling hits just like the first time.
+      <em>Nostalgia doesn't have to stay in the past.</em>
+    </p>
+  </div>
+
+  <div class="wave-deco">
+    <div class="wb"></div><div class="wb"></div><div class="wb"></div>
+    <div class="wb"></div><div class="wb"></div><div class="wb"></div>
+    <div class="wb"></div><div class="wb"></div><div class="wb"></div>
+    <div class="wb"></div><div class="wb"></div><div class="wb"></div>
+    <div class="wb"></div><div class="wb"></div><div class="wb"></div>
+  </div>
+
+  <!-- PILLARS -->
+  <div class="pillars">
+    <div class="pillar">
+      <span class="pillar-icon">🕹️</span>
+      <div class="pillar-title">2010s Only</div>
+      <p>Strictly curated from the decade that defined a generation — the golden era of EDM and internet culture.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">⚡</span>
+      <div class="pillar-title">Nightcore &amp; EDM</div>
+      <p>Forgotten tracks reworked with speed, energy, and that signature Nightcore punch.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">🎲</span>
+      <div class="pillar-title">Random Mixes</div>
+      <p>Surprise compilations — no theme, just vibes. Perfect for study sessions, gaming, or late nights.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">🌌</span>
+      <div class="pillar-title">Consistent Aesthetic</div>
+      <p>Every upload follows the same visual identity. Clean, neon-soaked, unmistakably Skyphose.</p>
+    </div>
+  </div>
+
+  <!-- CONTENT TYPES -->
+  <div class="content-block">
+    <div class="block-label">What We Upload</div>
+    <div class="content-rows">
+      <div class="crow">
+        <span class="crow-icon">🎵</span>
+        <div>
+          <div class="crow-title">Nightcore Edits</div>
+          <div class="crow-desc">Forgotten 2010s bangers sped up and pitched — the core of the channel. Weekly uploads.</div>
+        </div>
+      </div>
+      <div class="crow">
+        <span class="crow-icon">🔁</span>
+        <div>
+          <div class="crow-title">EDM Reworks</div>
+          <div class="crow-desc">Remixed versions that modernize the sound while keeping the soul of the original.</div>
+        </div>
+      </div>
+      <div class="crow">
+        <span class="crow-icon">🎲</span>
+        <div>
+          <div class="crow-title">Random Mixes</div>
+          <div class="crow-desc">No-theme compilations dropped whenever the vibe calls for it. All killer, no filler.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENRES -->
+  <div class="genres">
+    <div class="genres-label">Sounds You'll Hear</div>
+    <div class="tags">
+      <span class="tag">Nightcore</span>
+      <span class="tag">EDM</span>
+      <span class="tag">Future Bass</span>
+      <span class="tag">Electro House</span>
+      <span class="tag">Melodic Dubstep</span>
+      <span class="tag">Trap</span>
+      <span class="tag">Electro Pop</span>
+      <span class="tag">Progressive House</span>
+      <span class="tag">DnB</span>
+    </div>
+  </div>
+
+  <!-- RULES -->
+  <div class="rules">
+    <div class="rules-title">Using Our Music</div>
+    <ul>
+      <li>Credit <strong>Skyphose</strong> in your video description with the track link</li>
+      <li>Free to use for YouTube, Twitch streams, and personal projects</li>
+      <li>Do not reupload tracks to other channels without permission</li>
+      <li>Commercial use requires prior permission from the original artist</li>
+      <li>Going live? Shout us out — we love seeing the community use our tracks 🌌</li>
+    </ul>
+  </div>
+
+  <!-- SOCIAL -->
+  <div class="social">
+    <div class="social-label">Find Us</div>
+    <div class="social-links">
+      <a class="slink" href="#">▶ YouTube</a>
+      <a class="slink" href="#">♪ Spotify</a>
+      <a class="slink" href="#">◈ Discord</a>
+      <a class="slink" href="#">◉ Instagram</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    © Skyphose · Bringing Back The 2010s · One Drop At A Time
+  </div>
+
+</div>
+</body>
+</html>
