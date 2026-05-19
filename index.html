@@ -427,15 +427,15 @@
       </div>
     </div>
 
-    <!-- RULES -->
+    <!-- RULES (MODIFICADO) -->
     <div class="rules">
-      <div class="rules-title" data-i18n="rulesTitle">Using Our Music</div>
+      <div class="rules-title" data-i18n="rulesTitle">Copyright & Usage</div>
       <ul>
-        <li data-i18n="rule1">Credit <strong>Skyphose</strong> in your video description with the track link</li>
-        <li data-i18n="rule2">Free to use for YouTube, Twitch streams, and personal projects</li>
-        <li data-i18n="rule3">Do not reupload tracks to other channels without permission</li>
-        <li data-i18n="rule4">Commercial use requires prior permission from the original artist</li>
-        <li data-i18n="rule5">Going live? Shout us out — we love seeing the community use our tracks 🌌</li>
+        <li data-i18n="rule1">We do <strong>not</strong> own the original songs. We just bring them back as edits and mixes.</li>
+        <li data-i18n="rule2">No need to credit us if you use our versions in your videos or streams.</li>
+        <li data-i18n="rule3">We try to avoid strictly copyrighted tracks, but <strong>we cannot guarantee</strong> you won't get a claim.</li>
+        <li data-i18n="rule4">Use these tracks at your own risk for your YouTube or Twitch projects.</li>
+        <li data-i18n="rule5">Always make sure to support the original artists! 🌌</li>
       </ul>
     </div>
 
@@ -479,12 +479,15 @@
         content3Title: "Random Mixes",
         content3Desc: "No-theme compilations dropped whenever the vibe calls for it. All killer, no filler.",
         genresLabel: "Sounds You'll Hear",
-        rulesTitle: "Using Our Music",
-        rule1: "Credit <strong>Skyphose</strong> in your video description with the track link",
-        rule2: "Free to use for YouTube, Twitch streams, and personal projects",
-        rule3: "Do not reupload tracks to other channels without permission",
-        rule4: "Commercial use requires prior permission from the original artist",
-        rule5: "Going live? Shout us out — we love seeing the community use our tracks 🌌",
+        
+        // REGRAS ATUALIZADAS EM INGLÊS
+        rulesTitle: "Copyright & Usage",
+        rule1: "We do <strong>not</strong> own the original songs. We just bring them back as edits and mixes.",
+        rule2: "No need to credit us if you use our versions in your videos or streams.",
+        rule3: "We try to avoid strictly copyrighted tracks, but <strong>we cannot guarantee</strong> you won't get a claim.",
+        rule4: "Use these tracks at your own risk for your YouTube or Twitch projects.",
+        rule5: "Always make sure to support the original artists! 🌌",
+        
         socialLabel: "Find Us",
         footer: "© Skyphose · Bringing Back The 2010s · One Drop At A Time"
       },
@@ -508,12 +511,15 @@
         content3Title: "Mixes Aleatórios",
         content3Desc: "Compilações sem tema lançadas sempre que a vibe pede. Só pedrada, sem enrolação.",
         genresLabel: "Sons Que Você Vai Ouvir",
-        rulesTitle: "Usando Nossa Música",
-        rule1: "Dê os créditos à <strong>Skyphose</strong> na descrição do seu vídeo com o link da faixa",
-        rule2: "Livre para usar no YouTube, streams da Twitch e projetos pessoais",
-        rule3: "Não reenvie as faixas para outros canais sem permissão",
-        rule4: "Uso comercial requer permissão prévia do artista original",
-        rule5: "Vai abrir live? Manda um salve — adoramos ver a comunidade usando nossas músicas 🌌",
+        
+        // REGRAS ATUALIZADAS EM PORTUGUÊS
+        rulesTitle: "Aviso sobre Direitos Autorais",
+        rule1: "Nós <strong>não</strong> somos donos das músicas originais. Apenas fazemos edições e mixes.",
+        rule2: "Não é necessário nos dar créditos se usar nossas versões em seus vídeos ou streams.",
+        rule3: "Evitamos ao máximo músicas com copyright rígido, mas <strong>não garantimos</strong> que você não tomará claim.",
+        rule4: "Use as faixas por sua própria conta e risco em seus projetos no YouTube ou Twitch.",
+        rule5: "Sempre apoie os artistas originais! 🌌",
+        
         socialLabel: "Encontre-nos",
         footer: "© Skyphose · Trazendo os Anos 2010 de Volta · Um Drop de Cada Vez"
       }
@@ -529,10 +535,8 @@
     }
 
     function applyBrowserLanguage() {
-      // Pega o idioma configurado no sistema do usuário
       const userLang = navigator.language || navigator.userLanguage; 
       
-      // Se começar com "pt" (Português do Brasil ou Portugal), aplica PT. Se não, fica em Inglês.
       if (userLang.toLowerCase().startsWith('pt')) {
         setLanguage('pt');
       } else {
@@ -540,7 +544,6 @@
       }
     }
 
-    // Executa a verificação assim que a página carrega
     applyBrowserLanguage();
   </script>
 </body>
